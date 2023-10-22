@@ -6,6 +6,10 @@ import io.cucumber.java.en.When;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+/**
+ * 6410450087 Kittikan Makphon
+ */
+
 public class BuyStepdefs {
 
     private ProductCatalog catalog;
@@ -31,6 +35,11 @@ public class BuyStepdefs {
     @Then("total should be {float}")
     public void total_should_be(double total) {
         assertEquals(total, order.getTotal());
+    }
+
+    @Then("total {string} stock should be {int}")
+    public void total_stock_should_be(String product, int stock) {
+        assertEquals(stock, catalog.getProduct(product).getStock());
     }
 }
 
